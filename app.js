@@ -24,8 +24,8 @@ app.get('/myform', function(req, res){
   		if (err) {
 			console.log("Can't insert Student", err)
 		} else {
-			console.log(result.ops) // ops has the documents added
-			console.log(result.ops[0]._id.getTimestamp())
+			console.log(res.ops) // ops has the documents added
+			console.log(res.ops[0]._id.getTimestamp())
 		}
   const collection = client.db("heroku_lpk74b29").collection("Student");
   
