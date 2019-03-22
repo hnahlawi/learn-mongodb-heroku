@@ -39,10 +39,10 @@ app.get('/myform', function(req, res){
 		year: year
 	}, (error, result) => {
 		if (error) {
-			log("Can't insert Student", error)
+			console.log("Can't insert Student", error)
 		} else {
-			log(result.ops) // ops has the documents added
-			log(result.ops[0]._id.getTimestamp())
+			console.log(result.ops) // ops has the documents added
+			console.log(result.ops[0]._id.getTimestamp())
 		}
 		
 	})
