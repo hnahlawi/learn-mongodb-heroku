@@ -21,8 +21,8 @@ app.get('/myform', function(req, res){
 
 
   client.connect(err => {
-  	if (error) {
-			console.log("Can't insert Student", error)
+  		if (err) {
+			console.log("Can't insert Student", err)
 		} else {
 			console.log(result.ops) // ops has the documents added
 			console.log(result.ops[0]._id.getTimestamp())
