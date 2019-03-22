@@ -1,10 +1,10 @@
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://hnahlawi:ahAH1011@hadicluster-cr6gy.mongodb.net/test?retryWrites=tru";
+const uri = "mongodb://hnahlawi:ahAH1011@ds221416.mlab.com:21416/heroku_lpk74b29";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 
 const express = require('express')
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000	
 
 
 var app = express()
@@ -21,7 +21,7 @@ app.get('/myform', function(req, res){
 
 
   client.connect(err => {
-  const collection = client.db("StudentAPI").collection("Students");
+  const collection = client.db("heroku_lpk74b29").collection("Student");
   
   //const name = document.getElementById("studentName")
   //const year = document.getElementById("studentYear")
