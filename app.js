@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const uri = process.env.MONGOLAB_URI;
+const uri = "mongodb+srv://hnahlawi:ahAH1011@hadicluster-cr6gy.mongodb.net/test?retryWrites=tru";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 
@@ -20,7 +20,7 @@ app.get('/myform', function(req, res){
 
 
 
-  MongoClient.connect(uri, (err, db) => {
+  client.connect(err => {
   const collection = client.db("StudentAPI").collection("Students");
   
   //const name = document.getElementById("studentName")
@@ -38,7 +38,7 @@ app.get('/myform', function(req, res){
 		}
 	})
 
-  db.close();
+  client.close();
 })
 
 });
