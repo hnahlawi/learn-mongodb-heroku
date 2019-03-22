@@ -47,9 +47,7 @@ app.get('/myform', function(req, res){
 		
 	})
 
-  client.close();
 })
-  client.close();
 
 });
 
