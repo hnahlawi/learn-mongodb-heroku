@@ -2,6 +2,8 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb://hadi:ahAH1011@ds221416.mlab.com:21416/heroku_lpk74b29";
 const client = new MongoClient(encodeURI(uri), { useNewUrlParser: true });
 
+var bodyParser = require('body-parser');
+
 
 const express = require('express')
 const port = process.env.PORT || 3000	
@@ -14,7 +16,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/learning-index.html')
 })
 
-app.get('/myform', function(req, res){ 
+app.post('/myform', function(req, res){ 
     var name = req.query.nameInput; //mytext is the name of your input box
     var year = parseInt(req.query.yearInput)
 
@@ -36,11 +38,18 @@ app.get('/myform', function(req, res){
 		name: name,
 		year: year
 	}, (error, result) => {
+		if (error) {
+			log("Can't insert Student", error)
+		} else {
+			log(result.ops) // ops has the documents added
+			log(result.ops[0]._id.getTimestamp())
+		}
 		
 	})
 
   client.close();
 })
+  client.close();
 
 });
 
