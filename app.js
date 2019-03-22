@@ -21,6 +21,12 @@ app.get('/myform', function(req, res){
 
 
   client.connect(err => {
+  	if (error) {
+			console.log("Can't insert Student", error)
+		} else {
+			console.log(result.ops) // ops has the documents added
+			console.log(result.ops[0]._id.getTimestamp())
+		}
   const collection = client.db("heroku_lpk74b29").collection("Student");
   
   //const name = document.getElementById("studentName")
@@ -30,12 +36,7 @@ app.get('/myform', function(req, res){
 		name: name,
 		year: year
 	}, (error, result) => {
-		if (error) {
-			console.log("Can't insert Student", error)
-		} else {
-			console.log(result.ops) // ops has the documents added
-			console.log(result.ops[0]._id.getTimestamp())
-		}
+		
 	})
 
   client.close();
