@@ -20,7 +20,7 @@ app.get('/myform', function(req, res){
 
 
 
-  client.connect(err => {
+  MongoClient.connect(url, (err, db) => {
   const collection = client.db("StudentAPI").collection("Students");
   
   //const name = document.getElementById("studentName")
@@ -38,7 +38,7 @@ app.get('/myform', function(req, res){
 		}
 	})
 
-  client.close();
+  db.close();
 })
 
 });
