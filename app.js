@@ -20,7 +20,7 @@ app.get('/myform', function(req, res){
 
 
 
-  MongoClient.connect(url, (err, db) => {
+  MongoClient.connect(uri, (err, db) => {
   const collection = client.db("StudentAPI").collection("Students");
   
   //const name = document.getElementById("studentName")
