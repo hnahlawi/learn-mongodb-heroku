@@ -49,14 +49,8 @@ app.post('/', function(req, res){
 		
 	})
 
-}).then((result) => {
-		// send as a response to the client
-		// the object that was saved
-		res.send(result)
-	}, (error) => {
-		res.status(400).send(error) // 400 for bad request
-	})
-
+})
+  
 });
 
 
