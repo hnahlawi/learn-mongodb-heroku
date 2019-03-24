@@ -22,6 +22,9 @@ app.get('/', function (req, res) {
  }))
 
 
+app.get()
+
+
 app.post('/', function(req, res){ 
 		 client.connect(err => {
   		if (err) {
