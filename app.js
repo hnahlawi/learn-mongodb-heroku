@@ -18,8 +18,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/', function(req, res){ 
-    var name = req.body.nameInput; //mytext is the name of your input box
-    var year = parseInt(req.body.yearInput)
+    
 
 
 
@@ -34,6 +33,8 @@ app.post('/', function(req, res){
   
   //const name = document.getElementById("studentName")
   //const year = document.getElementById("studentYear")
+  var name = req.body.nameInput; //mytext is the name of your input box
+  var year = parseInt(req.body.yearInput)
   collection.insertOne({
 		//_id: 7,
 		name: name,
@@ -48,7 +49,13 @@ app.post('/', function(req, res){
 		
 	})
 
-})
+}).then((result) => {
+		// send as a response to the client
+		// the object that was saved
+		res.send(result)
+	}, (error) => {
+		res.status(400).send(error) // 400 for bad request
+	})
 
 });
 
