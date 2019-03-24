@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000
 
 
 var app = express()
+app.use(bodyParser.json())
 
 // render the index page
 app.get('/', function (req, res) {
@@ -17,8 +18,8 @@ app.get('/', function (req, res) {
 })
 
 app.post('/', function(req, res){ 
-    var name = req.query.nameInput; //mytext is the name of your input box
-    var year = parseInt(req.query.yearInput)
+    var name = req.body.nameInput; //mytext is the name of your input box
+    var year = parseInt(req.body.yearInput)
 
 
 
