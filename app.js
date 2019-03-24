@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/learning-index.html')
 })
 
-app.post('/', function(req, res){ 
+app.post('/Student', function(req, res){ 
     
 
 
@@ -50,7 +50,7 @@ app.post('/', function(req, res){
 	})
 
 })
-  
+
 });
 
 
