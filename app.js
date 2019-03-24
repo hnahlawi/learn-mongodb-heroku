@@ -17,12 +17,12 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/learning-index.html')
 })
 
+ app.use(bodyParser.urlencoded({
+     extended: true
+ }))
+
 app.post('/Student', function(req, res){ 
-    
-
-
-
-  client.connect(err => {
+		 client.connect(err => {
   		if (err) {
 			console.log("Can't insert Student", err)
 		} else {
