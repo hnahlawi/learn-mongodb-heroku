@@ -21,6 +21,14 @@ app.get('/', function (req, res) {
      extended: true
  }))
 
+
+app.get('/Student', function (req, res) {
+  res.sendFile(__dirname + '/learning-index.html')
+})
+
+
+
+
 app.post('/Student', function(req, res){ 
 		 client.connect(err => {
   		if (err) {
