@@ -22,14 +22,7 @@ app.get('/', function (req, res) {
  }))
 
 
-app.get('/Student', function (req, res) {
-  res.sendFile(__dirname + '/learning-index.html')
-})
-
-
-
-
-app.post('/Student', function(req, res){ 
+app.post('/', function(req, res){ 
 		 client.connect(err => {
   		if (err) {
 			console.log("Can't insert Student", err)
