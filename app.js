@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/learning-index.html')
 })
 
-app.get('/myform', function(req, res){ 
+app.post('/myform', function(req, res){ 
     var name = req.query.nameInput; //mytext is the name of your input box
     var year = parseInt(req.query.yearInput)
 
