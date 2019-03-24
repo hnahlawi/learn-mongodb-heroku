@@ -49,8 +49,9 @@ app.post('/', function(req, res){
 		}
 		
 	})
+	client.close()
 
-})
+ })
 
 });
 
